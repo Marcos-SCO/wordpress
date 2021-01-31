@@ -6,3 +6,5 @@
 !wp-content/*
 !wp-content/themes/*
 !wp-content/themes/scratch_theme/*
+!wp-content/themes/scratch_theme/css/*
+!wp-content/themes/scratch_theme/js/*
