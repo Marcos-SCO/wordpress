@@ -1,3 +1,9 @@
 <?php get_header('header.php', ['title' => 'Scratch Page']) ?>
-<h1>Front Page</h1>
+
+
+<div class="container">
+    <h1><?=the_title()?></h1>
+</div>
+
+
 <?php get_footer() ?>
