@@ -1,4 +1,4 @@
-<?php get_header('header.php', ['title' => 'Scratch Page']) ?>
+<?php get_header('header') ?>
 
 
 <div class="container">
