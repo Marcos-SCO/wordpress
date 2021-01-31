@@ -31,3 +31,8 @@ function load_js()
     wp_enqueue_script('bootstrap');
 }
 add_action('wp_enqueue_scripts', 'load_js');
+
+/**
+ * Theme options
+ */
+add_theme_support('menus');
