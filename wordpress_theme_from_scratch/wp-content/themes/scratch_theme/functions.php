@@ -3,6 +3,7 @@
 $templateUri = get_template_directory_uri();
 // Bootstrap
 $css_bootstrap = $templateUri . '/css/bootstrap.min.css';
+$css_main = $templateUri . '/css/main.css';
 $js_bootstrap = $templateUri . '/js/bootstrap.min.js';
 
 /**
@@ -10,9 +11,13 @@ $js_bootstrap = $templateUri . '/js/bootstrap.min.js';
  */
 function load_css()
 {
-    global $css_bootstrap;
+    global $css_bootstrap, $css_main;
+    
     wp_register_style('bootstrap', $css_bootstrap, [], false);
     wp_enqueue_style('bootstrap');
+    
+    wp_register_style('main', $css_main, [], false);
+    wp_enqueue_style('main');
 }
 add_action('wp_enqueue_scripts', 'load_css');
 
