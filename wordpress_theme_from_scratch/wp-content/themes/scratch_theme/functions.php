@@ -1,7 +1,7 @@
 <?php
-
+// Template
 $templateUri = get_template_directory_uri();
-
+// Bootstrap
 $css_bootstrap = $templateUri . '/css/bootstrap.min.css';
 $js_bootstrap = $templateUri . '/js/bootstrap.min.js';
 
