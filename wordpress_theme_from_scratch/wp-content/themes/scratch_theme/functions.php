@@ -12,10 +12,10 @@ $js_bootstrap = $templateUri . '/js/bootstrap.min.js';
 function load_css()
 {
     global $css_bootstrap, $css_main;
-    
+
     wp_register_style('bootstrap', $css_bootstrap, [], false);
     wp_enqueue_style('bootstrap');
-    
+
     wp_register_style('main', $css_main, [], false);
     wp_enqueue_style('main');
 }
@@ -36,3 +36,11 @@ add_action('wp_enqueue_scripts', 'load_js');
  * Theme options
  */
 add_theme_support('menus');
+
+/** Menus */
+register_nav_menus(
+    [
+        'top-menu' => 'Top Menu Location',
+        'mobile-menu' => 'Mobile Menu Location',
+    ]
+);
