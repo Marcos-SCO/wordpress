@@ -51,3 +51,23 @@ register_nav_menus(
 /** Custom images sizes */
 add_image_size('blog-large', 800, 400, true);
 add_image_size('blog-small', 300, 200, true);
+
+/** Register sidebars */
+function my_sidebars()
+{
+    // Page sidebar
+    register_sidebar([
+        'name' => 'Page Sidebar',
+        'id' => 'page-sidebar',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+    ]);
+    // Blog sidebar
+    register_sidebar([
+        'name' => 'Blog Sidebar',
+        'id' => 'blog-sidebar',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+    ]);
+}
+add_action('widgets_init', 'my_sidebars');
