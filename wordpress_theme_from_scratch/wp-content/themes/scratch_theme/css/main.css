@@ -9,6 +9,12 @@ header {
     padding: 2rem 0
 }
 
+.widget {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
 header .top-bar {
     display: flex;
     list-style: none;
@@ -67,11 +73,11 @@ header .top-bar li .sub-menu a:hover {
     color: #000
 }
 
-header .top-bar > .menu-item-has-children:hover > .sub-menu {
+header .top-bar>.menu-item-has-children:hover>.sub-menu {
     display: block
 }
 
-header .top-bar .menu-item-has-children .sub-menu > .menu-item-has-children:hover .sub-menu {
+header .top-bar .menu-item-has-children .sub-menu>.menu-item-has-children:hover .sub-menu {
     display: block
 }
 
