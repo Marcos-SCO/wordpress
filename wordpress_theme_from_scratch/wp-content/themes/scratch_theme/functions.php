@@ -71,3 +71,37 @@ function my_sidebars()
     ]);
 }
 add_action('widgets_init', 'my_sidebars');
+
+
+function my_first_post_type()
+{
+    $args = [
+        'labels' => [
+            'name' => 'Games',
+            'singular_name' => 'Game',
+        ],
+        //'hierarchical' => true,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-images-alt2',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        // 'rewrite' => ['slug' => 'cars']
+    ];
+    register_post_type('games', $args);
+}
+add_action('init', 'my_first_post_type');
+
+function my_first_taxonomy()
+{
+    $args = [
+        'labels' => [
+            'name' => 'Categorias',
+            'singular_name' => 'Categoria',
+        ],
+        'public' => true,
+        'hierarchical' => false,
+    ];
+
+    register_taxonomy('categories', ['games'], $args);
+}
+add_action('init', 'my_first_taxonomy');

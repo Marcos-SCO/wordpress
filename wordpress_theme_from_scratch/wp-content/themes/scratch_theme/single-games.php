@@ -8,9 +8,20 @@
             <img src="<?php the_post_thumbnail_url('blog-large') ?>" alt="<?php the_title() ?>" class="img-fluid mb-3 img-thumbnail">
         <?php endif; ?>
 
-        <h1><?= the_title() ?></h1>
+        <div class="row">
+            <h1><?= the_title() ?></h1>
 
-        <?= get_template_part('includes/section', 'blogcontent') ?>
+            <div class="col-lg-6">
+                <?= get_template_part('includes/section', 'games') ?>
+            </div>
+
+            <div class="col-lg-6">
+
+            </div>
+
+        </div>
+
+
 
     </div>
 </section>
