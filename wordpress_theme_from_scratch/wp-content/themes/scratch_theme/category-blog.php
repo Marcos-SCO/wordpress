@@ -4,6 +4,12 @@
 <section class="page-wrap">
     <div class="container">
 
+        <?php if (is_active_sidebar('blog-sidebar')) : ?>
+            <div class="col-lg-3">
+                <?php dynamic_sidebar('blog-sidebar'); ?>
+            </div>
+        <?php endif; ?>
+
         <h1><?= single_cat_title() ?></h1>
 
         <?= get_template_part('includes/section', 'archive') ?>
