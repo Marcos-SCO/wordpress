@@ -8,6 +8,8 @@
     
         <?= get_template_part('includes/section', 'content') ?>
     
+        <?php get_search_form() ?>
+
     </div>
 </div>
 
