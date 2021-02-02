@@ -26,9 +26,11 @@ add_action('wp_enqueue_scripts', 'load_css');
  */
 function load_js()
 {
-    global $js_bootstrap;
+    global $js_bootstrap, $templateUri;
     wp_register_script('bootstrap', $js_bootstrap, [], true);
     wp_enqueue_script('bootstrap');
+    wp_register_script('custom', $templateUri .'/js/custom.js', [], true);
+    wp_enqueue_script('custom');
 }
 add_action('wp_enqueue_scripts', 'load_js');
 
