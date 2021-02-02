@@ -84,7 +84,7 @@ function my_first_post_type()
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-images-alt2',
-        'supports' => ['title', 'editor', 'thumbnail'],
+        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
         // 'rewrite' => ['slug' => 'cars']
     ];
     register_post_type('games', $args);
