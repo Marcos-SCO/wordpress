@@ -1,5 +1,12 @@
 <?php get_header() ?>
 
+<?php
+function isPostMetaData($key)
+{
+    global $post;
+    return get_post_meta($post->ID, $key, true);
+}
+?>
 
 <section class="page-wrap">
     <div class="container">
@@ -16,11 +23,15 @@
             </div>
 
             <div class="col-lg-6">
-
+                <?php if (isPostMetaData('produtora')) : ?>
+                    <li>Produtora: <?= get_post_meta($post->ID, 'produtora', true) ?></li>
+                <?php endif; ?>
+                <?php if (isPostMetaData('data_de_lançamento')) : ?>
+                    <li>Data de lançamento: <?= get_post_meta($post->ID, 'data_de_lançamento', true) ?></li>
+                <?php endif; ?>
             </div>
 
         </div>
-
 
 
     </div>
