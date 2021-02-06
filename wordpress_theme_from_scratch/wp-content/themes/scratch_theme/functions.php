@@ -29,9 +29,9 @@ function load_js()
     global $js_bootstrap, $templateUri;
     wp_register_script('bootstrap', $js_bootstrap, [], true);
     wp_enqueue_script('bootstrap');
-    wp_register_script('custom', $templateUri .'/js/custom.js', [], true);
+    wp_register_script('custom', $templateUri . '/js/custom.js', [], true);
     wp_enqueue_script('custom');
-    wp_register_script('xhr', $templateUri .'/js/xhr.js', [], true);
+    wp_register_script('xhr', $templateUri . '/js/xhr.js', [], true);
     wp_enqueue_script('xhr');
 }
 add_action('wp_enqueue_scripts', 'load_js');
@@ -109,3 +109,11 @@ function my_first_taxonomy()
     register_taxonomy('categories', ['games'], $args);
 }
 add_action('init', 'my_first_taxonomy');
+
+
+add_action('wp_ajax_enquiry', 'enquiry_form');
+add_action('wp_ajax_nopriv_enquiry', 'enquiry_form');
+function enquiry_form()
+{
+    wp_send_json_success('it works');
+}
