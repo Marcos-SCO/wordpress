@@ -62,6 +62,6 @@
             }
         }
         sendPostRequest(url)
-        .then(data => console.log(data.data));
+        .then(data => console.log(data));
     });
 </script>

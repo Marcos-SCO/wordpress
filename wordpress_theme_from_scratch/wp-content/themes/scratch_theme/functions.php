@@ -111,9 +111,41 @@ function my_first_taxonomy()
 add_action('init', 'my_first_taxonomy');
 
 
+/** sending emails */
 add_action('wp_ajax_enquiry', 'enquiry_form');
 add_action('wp_ajax_nopriv_enquiry', 'enquiry_form');
 function enquiry_form()
 {
-    wp_send_json_success('it works');
+    $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+    // admin address
+    $adminEmail = get_option('admin_email');
+
+    $headers = [
+        'Content-type: text/html; charset=UTF-8',
+        'From: <' . $adminEmail.'>',
+        'Reply-to:' . $data['email'],
+        'BCC:' . $data['email'],
+    ];
+    // who are we sending the email to
+    $sendTo = $adminEmail;
+    // subject
+    $subject = 'Mensagem de ' . $data['fist_name'] . ' ' . $data['last_name'];
+    // Message
+    $message = '';
+    foreach ($data as $index => $field) {
+        $message .= '<strong>' . $index . '</strong>' . $field . '<br/>';
+    }
+
+    try {
+        if (wp_mail($sendTo, $subject, $message, $headers)) {
+            wp_send_json_success('Email sent');
+        } else {
+            wp_send_json_error('Email fail...');
+        }
+    } catch (Exception $e) {
+        wp_send_json_error($e->getMessage());
+    }
+
+    wp_send_json_success($data);
 }
