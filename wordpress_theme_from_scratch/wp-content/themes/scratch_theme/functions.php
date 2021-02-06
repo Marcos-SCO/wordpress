@@ -1,5 +1,9 @@
 <?php
 // Template
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
 $templateUri = get_template_directory_uri();
 // Bootstrap
 $css_bootstrap = $templateUri . '/css/bootstrap.min.css';
@@ -130,7 +134,7 @@ function enquiry_form()
     // who are we sending the email to
     $sendTo = $adminEmail;
     // subject
-    $subject = 'Mensagem de ' . $data['fist_name'] . ' ' . $data['last_name'];
+    $subject = 'Mensagem de ' . $data['first_name'] . ' ' . $data['last_name'];
     // Message
     $message = '';
     foreach ($data as $index => $field) {
@@ -150,6 +154,19 @@ function enquiry_form()
     wp_send_json_success($data);
 }
 
+/** PHPMailer overwrite */
+add_action('phpmailer_init','custom_mailer');
+function custom_mailer(PHPMailer $phpmailer) 
+{
+    $phpmailer->SetFrom('marcos_sco@outlook.com','Marcos');
+    $phpmailer->Host = 'smtp.gmail.com';
+    $phpmailer->Port = 587;
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->SMTPSecure = 'tls';
+    $phpmailer->Username = SMTP_LOGIN;
+    $phpmailer->Password = SMTP_PASSWORD;
+    $phpmailer->isSMTP();
+}
 
 /**
  * Register Custom Navigation Walker
