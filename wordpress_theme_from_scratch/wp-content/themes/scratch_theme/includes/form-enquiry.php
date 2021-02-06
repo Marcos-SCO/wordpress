@@ -1,4 +1,4 @@
-<form>
+<form id="enquiry" method="post">
     <h2>Envia sua mensagem</h2>
     <div class="form-group row">
         <div class="col-lg-6">
@@ -26,3 +26,21 @@
     </div>
 
 </form>
+
+<script>
+    (() => {
+        let enquiry = document.getElementById('enquiry');
+        enquiry.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let form = new FormData(enquiry);
+            let obj = {};
+            for (let [key, value] of form.entries()) {
+                obj[key] = value;
+            }
+
+            let url = '<?=admin_url('admin-ajax.php')?>';
+            console.log(obj);
+            console.log(url);
+        });
+    })();
+</script>
