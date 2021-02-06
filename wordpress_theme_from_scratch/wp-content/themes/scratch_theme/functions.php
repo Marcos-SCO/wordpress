@@ -123,7 +123,7 @@ function enquiry_form()
 
     $headers = [
         'Content-type: text/html; charset=UTF-8',
-        'From: <' . $adminEmail.'>',
+        'From: <' . $adminEmail . '>',
         'Reply-to:' . $data['email'],
         'BCC:' . $data['email'],
     ];
@@ -149,3 +149,13 @@ function enquiry_form()
 
     wp_send_json_success($data);
 }
+
+
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker()
+{
+    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action('after_setup_theme', 'register_navwalker');
