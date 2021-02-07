@@ -1,0 +1,19 @@
+/** overwrite bootstrap variables */
+$theme-colors: {
+    "primary": #f00,
+    "danger": #f00,
+};
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@import 'colors';
+@import 'header';
+@import 'content';
+
+body {
+    background-color: $primary;
+
+    &:hover {
+        color: $secondary
+    }
+}
