@@ -12,9 +12,17 @@
 <body <?php body_class('test'); ?>>
 
     <header class="main-header">
-        <div class="container">
-            <figure class="logo">
-                <img src="<?php bloginfo('template_directory'); ?>/images/WooCommerceLogo.svg" alt="Logo" class="img-fluid">
-            </figure>
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="<?= get_site_url() ?>">
+                <figure class="logo">
+                    <img src="<?php bloginfo('template_directory'); ?>/images/WooCommerceLogo.svg" alt="Logo" class="img-fluid">
+                </figure>
+            </a>
+            <?php
+            wp_nav_menu([
+                'theme_location' => 'top-menu',
+                'menu_class' => 'top-menu',
+            ]);
+            ?>
         </div>
     </header>
