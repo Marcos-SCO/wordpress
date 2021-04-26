@@ -1,2 +1,2 @@
-# wordpress
+# wordpress | WP
 wordpress development repository
