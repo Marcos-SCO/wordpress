@@ -11,6 +11,10 @@
 
 <body <?php body_class('test'); ?>>
 
-    <header>
-        <div class="test"></div>
+    <header class="main-header">
+        <div class="container">
+            <figure class="logo">
+                <img src="<?php bloginfo('template_directory'); ?>/images/WooCommerceLogo.svg" alt="Logo" class="img-fluid">
+            </figure>
+        </div>
     </header>

@@ -1,0 +1,13 @@
+.main-header {
+    background: $light;
+    padding: 1rem 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+
+    .logo {
+        margin: 0;
+
+        img {
+            max-width: 100px;
+        }
+    }
+}
