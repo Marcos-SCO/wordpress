@@ -10048,3 +10048,13 @@ html {
 #hero h1 {
   color: #fff;
 }
+
+.main-container {
+  padding: 2rem 0;
+}
+
+.main-footer {
+  height: 300px;
+  width: 100%;
+  background-color: #f0f0f0;
+}
