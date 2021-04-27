@@ -23,8 +23,9 @@ function load_scripts()
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
-// Add menus
+// Add support
 add_theme_support('menus');
+add_theme_support('post-thumbnails');
 
 // Register menus
 register_nav_menus(
@@ -32,3 +33,24 @@ register_nav_menus(
         'top-menu' => 'Top Menu',
     ]
 );
+
+// Add img sizes
+add_image_size('post_image', 1100, 750, false);
+
+
+// Add a widget
+register_sidebar([
+    'name' => 'Page Sidebar',
+    'id' => 'page-sidebar',
+    'class' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>',
+]);
+
+register_sidebar([
+    'name' => 'Blog Sidebar',
+    'id' => 'blog-sidebar',
+    'class' => '',
+    'before_title' => '<h4>',
+    'after_title' => '</h4>',
+]);

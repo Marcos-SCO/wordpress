@@ -13,18 +13,20 @@
 
     <header class="main-header">
         <div class="container">
-            <div class="row d-flex align-items-center justify-content-between">
-                <a href="<?= get_site_url() ?>">
-                    <figure class="logo">
-                        <img src="<?php bloginfo('template_directory'); ?>/images/WooCommerceLogo.svg" alt="Logo" class="img-fluid">
-                    </figure>
-                </a>
-                <?php
-                wp_nav_menu([
-                    'theme_location' => 'top-menu',
-                    'menu_class' => 'top-menu',
-                ]);
-                ?>
+            <div class="row">
+                <div class="col d-flex align-items-center justify-content-between">
+                    <a href="<?= get_site_url() ?>">
+                        <figure class="logo">
+                            <img src="<?php bloginfo('template_directory'); ?>/images/WooCommerceLogo.svg" alt="Logo" class="img-fluid">
+                        </figure>
+                    </a>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'top-menu',
+                        'menu_class' => 'top-menu',
+                    ]);
+                    ?>
+                </div>
             </div>
         </div>
     </header>

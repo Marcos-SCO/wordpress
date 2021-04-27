@@ -10040,10 +10040,21 @@ html {
 }
 
 #hero {
-  height: 550px;
+  height: 300px;
   width: 100%;
-  background-size: cover;
   background-image: linear-gradient(0deg, rgba(60, 63, 67, 0.2), rgba(60, 63, 67, 0.2)), url("../images/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 768px) {
+  #hero {
+    height: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #hero {
+    height: 550px;
+  }
 }
 #hero h1 {
   color: #fff;
@@ -10053,8 +10064,33 @@ html {
   padding: 2rem 0;
 }
 
+.content {
+  padding: 3rem 0;
+}
+
 .main-footer {
-  height: 300px;
+  min-height: 300px;
   width: 100%;
   background-color: #f0f0f0;
+}
+
+.widget {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+.widget ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-post {
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
 }
