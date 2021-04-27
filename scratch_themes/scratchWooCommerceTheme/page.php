@@ -13,7 +13,9 @@
             </div>
             <div class="col-lg-9">
                 <figure>
-                    <img src="<?php the_post_thumbnail_url('post_image'); ?>" alt="<?php the_title() ?>" class="img-fluid mb-5">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <img src="<?php the_post_thumbnail_url('post_image'); ?>" alt="<?php the_title() ?>" class="img-fluid mb-5">
+                    <?php endif; ?>
                 </figure>
                 <?php
                 if (have_posts()) : while (have_posts()) : the_post();
